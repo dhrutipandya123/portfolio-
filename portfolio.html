@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhruti Pandya | Portfolio</title>
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern Reset & Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #0f172a; /* Deep Slate Blue */
+            --secondary-color: #3b82f6; /* Clean Tech Blue Accent */
+            --text-color: #334155;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Universal Section Title */
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 8px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Cards Universal Style */
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -5px rgba(0,0,0,0.05);
+        }
+
+        /* Grid utilities */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Skill Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: #f1f5f9;
+            color: #475569;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        .tag.learning {
+            background-color: #fef3c7;
+            color: #b45309;
+            border-color: #fde68a;
+        }
+
+        /* List / Experience Timelines */
+        .list-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+            border-left: 2px solid var(--secondary-color);
+        }
+
+        .list-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .list-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .list-item .meta {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .grid-2 { grid-template-columns: 1fr; }
+            #about .container { flex-direction: column !important; text-align: center; }
+            #about img { margin-bottom: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Dhruti<span>Pandya</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Minimalistic overlay image pattern) -->
+    <header id="hero" style="position: relative; background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover; color: var(--white); padding: 160px 0 110px 0; text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -1px;">Dhruti Pandya</h1>
+            <h2 style="font-size: 1.3rem; color: #93c5fd; font-weight: 400; margin-bottom: 2rem; letter-spacing: 0.5px;">B.Sc IT Student | Networks, Cloud Computing & DevOps</h2>
+            
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; font-size: 0.9rem; color: #cbd5e1;">
+                <span><i class="fa-solid fa-phone" style="color: var(--secondary-color); margin-right: 0.4rem;"></i> +91 9106851076</span>
+                <span><i class="fa-solid fa-envelope" style="color: var(--secondary-color); margin-right: 0.4rem;"></i> dhrutipandya416@gmail.com</span>
+                <span><i class="fa-solid fa-location-dot" style="color: var(--secondary-color); margin-right: 0.4rem;"></i> Ahmedabad, India</span>
+                <span><i class="fa-brands fa-linkedin" style="color: var(--secondary-color); margin-right: 0.4rem;"></i> <a href="https://www.linkedin.com/in/dhrutipandya/" target="_blank" style="color: #93c5fd; text-decoration: none;">LinkedIn</a></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section (Minimal Layout with Profile Placeholder) -->
+    <section id="about" style="padding: 80px 0; background-color: var(--white);">
+        <div class="container" style="display: flex; align-items: center; gap: 3rem; flex-direction: row;">
+            <!-- Profile Avatar Mockup -->
+            <div style="flex-shrink: 0; position: relative;">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&h=300&q=80" alt="Dhruti Pandya Profile Placeholder" style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid #f1f5f9; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <div style="position: absolute; bottom: 5px; right: 10px; background: #22c55e; width: 15px; height: 15px; border-radius: 50%; border: 2px solid var(--white);" title="Open to opportunities"></div>
+            </div>
+            
+            <div style="flex-grow: 1;">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Profile Summary</h2>
+                <p style="font-size: 1.05rem; color: #475569; line-height: 1.7; text-align: justify;">
+                    B.Sc. IT student with a strong foundation in computer hardware and networking. I have completed training in hardware installation, configuration, maintenance, and troubleshooting. I also have basic knowledge of networking and hands-on experience in network setup using practical tools. I am currently preparing for the CCNA to strengthen my networking skills and build a career in the IT field.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Certifications Section -->
+    <section id="skills" style="padding: 80px 0; background-color: #f8fafc; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="grid-2">
+                <!-- Technical Skills Column -->
+                <div class="card">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary-color); font-weight: 700;">Technical Framework</h3>
+                    
+                    <div style="margin-bottom: 1.2rem;">
+                        <h4 style="font-size: 0.95rem; color: #64748b; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Hardware Architecture</h4>
+                        <div class="tags">
+                            <span class="tag">Computer Assembly</span>
+                            <span class="tag">OS Installation</span>
+                            <span class="tag">Troubleshooting</span>
+                            <span class="tag">System Maintenance</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.2rem;">
+                        <h4 style="font-size: 0.95rem; color: #64748b; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Networking Core</h4>
+                        <div class="tags">
+                            <span class="tag">Network Fundamentals</span>
+                            <span class="tag">IP Addressing (Class A, B, C)</span>
+                            <span class="tag">Cisco Packet Tracer</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 style="font-size: 0.95rem; color: #64748b; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Specialization Focus</h4>
+                        <div class="tags">
+                            <span class="tag learning"><i class="fa-solid fa-graduation-cap" style="margin-right: 4px;"></i> CCNA Track</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Column -->
+                <div class="card">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--primary-color); font-weight: 700;">Verified Qualifications</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-shield-halved" style="color: var(--secondary-color); margin-top: 4px;"></i>
+                            <div>
+                                <p style="font-weight: 600; font-size: 0.95rem; color: var(--primary-color);">AWS Academy Cloud Foundations</p>
+                                <p style="font-size: 0.85rem; color: #64748b;">AWS Academy • 2025</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-shield-halved" style="color: var(--secondary-color); margin-top: 4px;"></i>
+                            <div>
+                                <p style="font-weight: 600; font-size: 0.95rem; color: var(--primary-color);">Gemini in Action: Agentic AI with MCP</p>
+                                <p style="font-size: 0.85rem; color: #64748b;">Google / Developer Community • 2025</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-shield-halved" style="color: var(--secondary-color); margin-top: 4px;"></i>
+                            <div>
+                                <p style="font-weight: 600; font-size: 0.95rem; color: var(--primary-color);">SQL and Relational Databases 101</p>
+                                <p style="font-size: 0.85rem; color: #64748b;">IBM • 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Experience Section (With subtle layout card structure) -->
+    <section id="experience" style="padding: 80px 0; background-color: var(--white);">
+        <div class="container">
+            <h2 class="section-title">Practical Lab Experience</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div class="card" style="padding: 1.5rem;">
+                    <div style="width: 40px; height: 40px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-microchip" style="color: var(--secondary-color);"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Hardware Architecture</h4>
+                    <p style="font-size: 0.9rem; color: #475569;">Hands-on desktop and laptop disassembly, component assessment, optimization, and BIOS configuration settings.</p>
+                </div>
+
+                <div class="card" style="padding: 1.5rem;">
+                    <div style="width: 40px; height: 40px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-network-wired" style="color: var(--secondary-color);"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Network Infrastructures</h4>
+                    <p style="font-size: 0.9rem; color: #475569;">Simulating topologies and configuring node packet paths via Cisco Packet Tracer with IP assignment parameters.</p>
+                </div>
+
+                <div class="card" style="padding: 1.5rem;">
+                    <div style="width: 40px; height: 40px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-terminal" style="color: var(--secondary-color);"></i>
+                    </div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary-color);">Systems Deployment</h4>
+                    <p style="font-size: 0.9rem; color: #475569;">Deploying Windows-based environments alongside configuration setups for baseline production ready standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="padding: 80px 0; background-color: #f8fafc; border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="section-title">Academic Background</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="list-item">
+                        <h4>Master in Networking, Cloud Computing & DevOps</h4>
+                        <div class="meta">TOPS Technologies, Ahmedabad | 2026</div>
+                        <p style="font-size: 0.9rem; color: #64748b;">Specialized Professional Track</p>
+                    </div>
+                    <div class="list-item" style="margin-top: 1.5rem;">
+                        <h4>B.Sc. in Information Technology (Cloud & App)</h4>
+                        <div class="meta">Gujarat University – Center for Professional Courses</div>
+                        <div style="display: inline-block; background-color: #e0f2fe; color: #0369a1; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-top: 0.25rem;">
+                            Sem 6 • CGPA: 8.42/10
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="list-item">
+                        <h4>Higher Secondary Education (Science Stream)</h4>
+                        <div class="meta">Diwan Ballubhai School, Ahmedabad</div>
+                        <p style="font-size: 0.9rem; color: #64748b;">GSEB Board Standard curriculum</p>
+                        <p style="font-size: 0.9rem; font-weight: 600; color: var(--text-color); margin-top: 0.25rem;">Score: 68.72%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--primary-color); color: #64748b; text-align: center; padding: 2.5rem 0; font-size: 0.85rem; border-top: 1px solid #1e293b;">
+        <div class="container">
+            <p style="color: #94a3b8; margin-bottom: 0.25rem;">&copy; 2026 Dhruti Pandya. All Rights Reserved.</p>
+            <p>Designed for Minimalist & Professional Cleanliness</p>
+        </div>
+    </footer>
+
+</body>
+</html>
